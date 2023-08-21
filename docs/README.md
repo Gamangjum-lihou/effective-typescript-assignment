@@ -15,7 +15,7 @@
 ## 추가 요구 사항
 
 - [ ] 모든 파일이 .ts로 작성되었는가.
-- [ ] `tsconfig.json` 설정에 아래의 항목이 포함되어 있는가.
+- [x] `tsconfig.json` 설정에 아래의 항목이 포함되어 있는가.
   - `noImplicitAny : true`
   - `strictNullChecks : true`
 - [ ] indent(인덴트, 들여쓰기) depth를 3이 넘지 않는가.
