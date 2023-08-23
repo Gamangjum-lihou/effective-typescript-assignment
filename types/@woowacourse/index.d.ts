@@ -6,6 +6,6 @@ declare module '@woowacourse/mission-utils' {
   }
 
   class Random {
-    static  pickNumberInRange(start: number, end: number): number;
+    static pickNumberInRange(start: number, end: number): number;
   }
 }
