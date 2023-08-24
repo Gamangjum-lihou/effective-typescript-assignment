@@ -10,7 +10,7 @@ export default class BaseballManager {
     this.#player = new Player();
   }
 
-  status() {
+  status = () => {
     this.#computer.status();
   }
 }

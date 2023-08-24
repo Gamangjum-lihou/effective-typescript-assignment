@@ -1,4 +1,4 @@
-import {GENERATE_NUMBER} from "../constants/generateNumber";
+import {GENERATE_NUMBER} from "../constants/Computer";
 import {Random} from "@woowacourse/mission-utils";
 
 export default class Computer {
