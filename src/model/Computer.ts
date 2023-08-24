@@ -1,8 +1,8 @@
 import {GENERATE_NUMBER} from "../constants/generateNumber";
 import {Random} from "@woowacourse/mission-utils";
 
-class Computer {
-  #number:number[] = [];
+export default class Computer {
+  #number : number[] = [];
 
   constructor() {
     this.generate();
@@ -22,5 +22,3 @@ class Computer {
   }
 }
 
-const computer = new Computer();
-computer.status();
