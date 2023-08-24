@@ -10,11 +10,16 @@ export default class BaseballManager {
   constructor() {
     this.#computer = new Computer();
     this.#player = new Player();
+    this.start();
   }
 
   start = () => {
     printStart();
-    readPlayerCommand(this.#player.setNumber);
+    readPlayerCommand(this.sendPlayerCommand);
+  }
+
+  sendPlayerCommand = (input: string) => {
+    this.#player.setNumber(input);
     this.check();
   }
 

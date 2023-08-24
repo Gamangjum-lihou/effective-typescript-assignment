@@ -4,7 +4,7 @@ import {GAME_MESSAGE} from "../constants/View";
 type readFunctionProp = (input: string) => void;
 
 export const readPlayerCommand = (callback: readFunctionProp) => {
-  Console.readLine(GAME_MESSAGE.start, (input : string) => {
+  Console.readLine(GAME_MESSAGE.inGame, (input : string) => {
     callback(input);
   });
 }
