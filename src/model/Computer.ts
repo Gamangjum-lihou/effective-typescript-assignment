@@ -8,7 +8,7 @@ export default class Computer {
     this.generate();
   }
 
-  generate() {
+  generate = () => {
     while (this.#number.length < GENERATE_NUMBER.length) {
       const number = Random.pickNumberInRange(GENERATE_NUMBER.startNum, GENERATE_NUMBER.endNum);
       if (!this.#number.includes(number)) {
@@ -17,8 +17,8 @@ export default class Computer {
     }
   }
 
-  status() {
-    console.log(this.#number);
+  getNumber = () => {
+    return this.#number;
   }
 }
 
