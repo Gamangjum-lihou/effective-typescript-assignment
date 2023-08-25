@@ -30,10 +30,6 @@ class Computer {
     return computer;
   };
 
-  getNumbers = () => {
-    return this.#numbers;
-  };
-
   compareNumbers = (playerNumbers: number[]): Count => {
     const count = { strike: 0, ball: 0 };
 
