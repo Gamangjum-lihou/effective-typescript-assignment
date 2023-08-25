@@ -1,10 +1,10 @@
 const baseballGamePresenter = require('./presenter/BaseballGamePresenter');
 
 class App {
-  baseballGamePresenter = new baseballGamePresenter();
+  #baseballGamePresenter = new baseballGamePresenter();
 
   play() {
-    this.baseballGamePresenter.run();
+    this.#baseballGamePresenter.run();
   }
 }
 
