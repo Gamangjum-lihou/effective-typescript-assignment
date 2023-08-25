@@ -6,7 +6,7 @@ const View = {
     return Console.print(MESSAGE.START_GAME);
   },
 
-  inputPlayerNumbers: (callback: Function) => {
+  inputPlayerNumbers: (callback: () => void) => {
     return Console.readLine(MESSAGE.INPUT_NUMBER, callback);
   },
 
@@ -14,7 +14,7 @@ const View = {
     return Console.print(message);
   },
 
-  printRestartMessage: (callback: Function) => {
+  printRestartMessage: (callback: () => void) => {
     return Console.readLine(MESSAGE.RESTART_GAME, callback);
   },
 
