@@ -13,6 +13,14 @@ const View = {
   printMessage: (message: string) => {
     return Console.print(message);
   },
+
+  printRestartMessage: (callback: Function) => {
+    return Console.readLine(MESSAGE.RESTART_GAME, callback);
+  },
+
+  consoleClose: () => {
+    return Console.close();
+  },
 };
 
 module.exports = View;

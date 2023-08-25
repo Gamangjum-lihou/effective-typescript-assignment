@@ -4,8 +4,11 @@ const {
   isValidNumbers,
   isValidLength,
   hasRepeatedNumbers,
+  isValidCode,
 } = require('../utils/validation');
 const { convertToNumberArray } = require('../utils/convert');
+const { GAME_CODE } = require('../constants/game');
+const { MESSAGE } = require('../constants/message');
 
 class Controller {
   #computer;
@@ -30,7 +33,13 @@ class Controller {
 
       View.printMessage(hintMessage);
 
-      this.compare();
+      const isWin = count.strike === GAME_CODE.WIN;
+      if (isWin) {
+        View.printMessage(MESSAGE.WIN_GAME);
+        this.askRestart();
+      } else {
+        this.compare();
+      }
     });
   };
 
@@ -38,6 +47,27 @@ class Controller {
     isValidNumbers(input);
     isValidLength(input);
     hasRepeatedNumbers(input);
+  };
+
+  askRestart = () => {
+    View.printRestartMessage((input: string) => {
+      const code = Number(input);
+
+      isValidCode(code);
+
+      if (code === GAME_CODE.RESTART) {
+        this.start();
+      }
+
+      if (code === GAME_CODE.FINISH) {
+        this.gameOver();
+      }
+    });
+  };
+
+  gameOver = () => {
+    View.printMessage(MESSAGE.GAME_OVER);
+    View.consoleClose();
   };
 }
 

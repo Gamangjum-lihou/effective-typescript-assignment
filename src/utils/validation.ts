@@ -1,5 +1,6 @@
 const { ERROR_MESSAGE } = require('../constants/message');
 const { VALIDATION } = require('../constants/validation');
+const { GAME_CODE } = require('../constants/game');
 
 const isValidNumbers = (input: string) => {
   if (!VALIDATION.REG_EXP.test(input)) {
@@ -24,4 +25,15 @@ const hasRepeatedNumbers = (input: string) => {
   }
 };
 
-module.exports = { isValidNumbers, isValidLength, hasRepeatedNumbers };
+const isValidCode = (code: number) => {
+  if (code !== GAME_CODE.RESTART && code !== GAME_CODE.FINISH) {
+    throw new Error(ERROR_MESSAGE.INVALID_CODE);
+  }
+};
+
+module.exports = {
+  isValidNumbers,
+  isValidLength,
+  hasRepeatedNumbers,
+  isValidCode,
+};
