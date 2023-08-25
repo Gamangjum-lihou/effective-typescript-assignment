@@ -1,4 +1,5 @@
 const { Random } = require('@woowacourse/mission-utils');
+const { VALIDATION } = require('../constants/validation');
 
 class Computer {
   #numbers;
@@ -10,8 +11,11 @@ class Computer {
   setNumbers() {
     const computer: number[] = [];
 
-    while (computer.length < 3) {
-      const number = Random.pickNumberInRange(1, 9);
+    while (computer.length < VALIDATION.LENGTH) {
+      const number = Random.pickNumberInRange(
+        VALIDATION.MIN_NUMBER,
+        VALIDATION.MAX_NUMBER
+      );
       if (!computer.includes(number)) {
         computer.push(number);
       }
