@@ -9,6 +9,10 @@ const View = {
   inputPlayerNumbers: (callback: Function) => {
     return Console.readLine(MESSAGE.INPUT_NUMBER, callback);
   },
+
+  printMessage: (message: string) => {
+    return Console.print(message);
+  },
 };
 
 module.exports = View;
