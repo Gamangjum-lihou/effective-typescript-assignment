@@ -1,7 +1,12 @@
 const View = require('../view/View');
+const Computer = require('../model/Computer');
 
 class Controller {
-  // constructor() {}
+  #computer;
+
+  constructor() {
+    this.#computer = new Computer();
+  }
 
   start = () => {
     View.printStartMessage();
