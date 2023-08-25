@@ -1,6 +1,7 @@
 const GAME_CODE = {
   RESTART: 1,
   FINISH: 2,
+  WIN: 3,
 } as const;
 
 const GAME_SIGN = {
