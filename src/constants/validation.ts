@@ -1,5 +1,5 @@
 const VALIDATION = {
-  REG_EXP: /^[0-9]+$/g,
+  REG_EXP: /^[0-9]+$/,
   LENGTH: 3,
   MIN_NUMBER: 1,
   MAX_NUMBER: 9,
