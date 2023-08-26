@@ -1,4 +1,4 @@
-const { printStart } = require('../view/View');
+const { printStart, readAnswer, printError } = require('../view/View');
 const baseballGame = require('../model/BaseballGame');
 
 class BaseballGamePresenter {
@@ -8,7 +8,15 @@ class BaseballGamePresenter {
     printStart();
   }
 
-  run() {}
+  run() {
+    readAnswer((input: string) => {
+      try {
+      } catch (message) {
+        printError(message);
+        this.run();
+      }
+    });
+  }
 }
 
 module.exports = BaseballGamePresenter;
