@@ -29,8 +29,8 @@ class BaseballController {
       }
     }
 
-    const isFinish = yield this.#view.readGameCommand;
-    if (isFinish === SELECT_FINISH) {
+    const userSelect = yield this.#view.readGameCommand;
+    if (userSelect === SELECT_FINISH) {
       this.#view.finishGame();
       return;
     }
