@@ -10,7 +10,8 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "rm -rf dist && tsc"
+    "build": "rm -rf dist && tsc",
+    "start": "cd dist && node App.js"
   },
   "repository": {
     "type": "git",
