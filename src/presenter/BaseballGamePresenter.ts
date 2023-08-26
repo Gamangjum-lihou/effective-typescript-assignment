@@ -5,7 +5,7 @@ import {
   printJudge,
   printEnd
 } from '../view/OutputView';
-import { readAnswer, readGameCommand } from '../view/InputView';
+import { readUserNumber, readGameCommand } from '../view/InputView';
 import {
   checkValidLength,
   checkHasNoDuplicates,
@@ -22,10 +22,10 @@ class BaseballGamePresenter {
   }
 
   run() {
-    readAnswer(this.#handleAnswerInput.bind(this));
+    readUserNumber(this.#handleUserInput.bind(this));
   }
 
-  #handleAnswerInput(input: string) {
+  #handleUserInput(input: string) {
     try {
       const userNumbers = input.split('').map(Number);
       this.#checkInput(userNumbers);

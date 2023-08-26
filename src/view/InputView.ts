@@ -1,8 +1,10 @@
 import { Console } from '@woowacourse/mission-utils';
 import { INPUT_MESSAGE } from '../constants/Message';
 
-const readAnswer = (callback: Function) => {
-  Console.readLine(INPUT_MESSAGE.answer, (input: string) => callback(input));
+const readUserNumber = (callback: Function) => {
+  Console.readLine(INPUT_MESSAGE.ask_number, (input: string) =>
+    callback(input)
+  );
 };
 
 const readGameCommand = (callback: Function) => {
@@ -11,4 +13,4 @@ const readGameCommand = (callback: Function) => {
   );
 };
 
-export { readAnswer, readGameCommand };
+export { readUserNumber, readGameCommand };
