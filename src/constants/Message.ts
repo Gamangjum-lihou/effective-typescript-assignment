@@ -26,8 +26,8 @@ const OUTPUT_MESSAGE = Object.freeze({
 });
 
 const ERROR_MESSAGE = Object.freeze({
-  number_digit: `${ERROR} 서로 다른 임의의 수 3개를 입력해주세요.`,
-  retry_or_quit: `${ERROR} '${COMMAND.retry}'(새로 시작) 또는 '${COMMAND.quit}'(게임 종료)를 입력해주세요.`
+  number_digit: `${ERROR} 서로 다른 임의의 수 3개를 입력해야합니다.`,
+  retry_or_quit: `${ERROR} '${COMMAND.retry}' 또는 '${COMMAND.quit}'를 입력해야합니다.`
 });
 
 export { ERROR, JUDGE, COMMAND, INPUT_MESSAGE, OUTPUT_MESSAGE, ERROR_MESSAGE };
