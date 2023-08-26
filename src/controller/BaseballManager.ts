@@ -20,7 +20,6 @@ export default class BaseballManager {
     this.#computer = new Computer();
     this.#player = new Player();
     printStart();
-    console.log(this.#computer.getNumber());
     readPlayerCommand(this.sendPlayerCommand);
   };
 
