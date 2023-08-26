@@ -7,6 +7,8 @@ import {
 } from '../view/OutputView';
 import { readAnswer, readGameCommand } from '../view/InputView';
 import { checkValidLength, checkHasNoDuplicates } from './InputValidator';
+import { Console } from '@woowacourse/mission-utils';
+import { COMMAND } from '../constants/Message';
 
 class BaseballGamePresenter {
   #baseballGame = new BaseballGame();
@@ -46,6 +48,27 @@ class BaseballGamePresenter {
 
   #finish() {
     printEnd();
+    this.#checkRetry();
+  }
+
+  #checkRetry() {
+    readGameCommand((input: string) => {
+      try {
+        input === COMMAND.retry ? this.#retry() : this.#end();
+      } catch (message) {
+        printError(message as string);
+        this.#checkRetry();
+      }
+    });
+  }
+
+  #retry() {
+    this.#baseballGame.resetComputer();
+    this.run();
+  }
+
+  #end() {
+    Console.close();
   }
 }
 

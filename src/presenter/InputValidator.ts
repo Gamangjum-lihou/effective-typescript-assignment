@@ -1,5 +1,5 @@
 import { NUMBER_LENGTH } from '../constants/Game';
-import { ERROR_MESSAGE } from '../constants/Message';
+import { COMMAND, ERROR_MESSAGE } from '../constants/Message';
 
 const checkValidLength = (length: number) => {
   if (length !== NUMBER_LENGTH) {
@@ -14,4 +14,10 @@ const checkHasNoDuplicates = (numbers: number[]) => {
   }
 };
 
-export { checkValidLength, checkHasNoDuplicates };
+const checkGameCommand = (input: string) => {
+  if (input !== COMMAND.retry && input !== COMMAND.quit) {
+    throw ERROR_MESSAGE.retry_or_quit;
+  }
+};
+
+export { checkValidLength, checkHasNoDuplicates, checkGameCommand };
