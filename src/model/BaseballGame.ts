@@ -16,6 +16,11 @@ class BaseballGame {
       }
     }
   }
+
+  resetComputer() {
+    this.#computer = [];
+    this.setComputer();
+  }
 }
 
 module.exports = BaseballGame;
