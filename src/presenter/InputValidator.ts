@@ -7,4 +7,11 @@ const checkValidLength = (length: number) => {
   }
 };
 
-export { checkValidLength };
+const checkHasNoDuplicates = (numbers: number[]) => {
+  const numberSet = new Set([...numbers]);
+  if (numberSet.size !== NUMBER_LENGTH) {
+    throw ERROR_MESSAGE.number_digit;
+  }
+};
+
+export { checkValidLength, checkHasNoDuplicates };
