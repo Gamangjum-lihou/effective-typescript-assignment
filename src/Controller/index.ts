@@ -1,4 +1,3 @@
-//import Validator from '../Validator';
 import View from '../View';
 import Model from '../Model/index';
 import runGenerator from '../utils/runGenerator';
