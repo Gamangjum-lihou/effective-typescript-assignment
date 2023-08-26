@@ -1,5 +1,5 @@
 import {Console} from '@woowacourse/mission-utils';
-import {GAME_MESSAGE} from '../constants/View';
+import {GAME_MESSAGE, GAME_SIGN} from '../constants/View';
 import {BallCounts} from '../model/Referee';
 
 export const printStart = () => {
@@ -8,16 +8,18 @@ export const printStart = () => {
 
 export const printScore = (score: BallCounts) => {
   if (score.strike && score.ball) {
-    Console.print(`${score.strike}스트라이크 ${score.ball}볼`);
+    Console.print(
+      `${score.ball}${GAME_SIGN.ball} ${score.strike}${GAME_SIGN.strike}`,
+    );
   }
   if (score.strike && !score.ball) {
-    Console.print(`${score.strike}스트라이크`);
+    Console.print(`${score.strike}${GAME_SIGN.strike}`);
   }
   if (!score.strike && score.ball) {
-    Console.print(`${score.ball}볼`);
+    Console.print(`${score.ball}${GAME_SIGN.ball}`);
   }
   if (!score.strike && !score.ball) {
-    Console.print(`낫싱`);
+    Console.print(`${GAME_SIGN.nothing}`);
   }
 };
 
