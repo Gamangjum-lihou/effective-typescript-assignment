@@ -1,4 +1,4 @@
-import {GENERATE_NUMBER} from "../constants/Computer";
+import {GENERATE_NUMBER} from '../constants/Computer';
 
 export interface BallCounts {
   ball: number;
@@ -20,6 +20,6 @@ export class Referee {
       }
     });
 
-    return { ball, strike, clear: (strike === GENERATE_NUMBER.length) };
-  }
+    return {ball, strike, clear: strike === GENERATE_NUMBER.length};
+  };
 }

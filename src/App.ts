@@ -1,4 +1,4 @@
-import BaseballManager from "./controller/BaseballManager";
+import BaseballManager from './controller/BaseballManager';
 
 export default class App {
   play() {

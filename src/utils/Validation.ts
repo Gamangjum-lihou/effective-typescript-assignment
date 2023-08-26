@@ -1,6 +1,6 @@
-import { GENERATE_NUMBER } from "../constants/Computer";
-import { ERROR_MESSAGE } from "../constants/View";
-import { COMMAND } from "../constants/Controller";
+import {GENERATE_NUMBER} from '../constants/Computer';
+import {ERROR_MESSAGE} from '../constants/View';
+import {COMMAND} from '../constants/Controller';
 
 export default class Validation {
   checkPlayerCommand = (input: string) => {

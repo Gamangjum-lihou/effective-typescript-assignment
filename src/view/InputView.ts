@@ -1,6 +1,6 @@
-import { Console } from "@woowacourse/mission-utils";
-import { GAME_MESSAGE } from "../constants/View";
-import Validation from "../utils/Validation";
+import {Console} from '@woowacourse/mission-utils';
+import {GAME_MESSAGE} from '../constants/View';
+import Validation from '../utils/Validation';
 
 type readFunctionProp = (input: string) => void;
 const validation = new Validation();
