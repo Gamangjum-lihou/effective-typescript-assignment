@@ -17,7 +17,7 @@ class BaseballController {
     runGenerator(this.#run.bind(this));
   }
 
-  *#run(): Generator<any> {
+  *#run(): Generator<unknown> {
     this.#model.setGame();
     while (true) {
       const userNumbers = yield this.#view.readGameNumbers;
