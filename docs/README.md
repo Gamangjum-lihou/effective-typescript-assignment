@@ -21,6 +21,6 @@
 - [x] `tsconfig.json` 설정에 아래의 항목이 포함되어 있는가.
   - `noImplicitAny : true`
   - `strictNullChecks : true`
-- [ ] indent(인덴트, 들여쓰기) depth를 3이 넘지 않는가.
+- [x] indent(인덴트, 들여쓰기) depth를 3이 넘지 않는가.
 - [ ] 함수(또는 메서드)가 한 가지 일만 하는가.
 - [ ] Jest를 이용하여 본인이 정리한 기능 목록이 정상 동작함을 테스트 코드로 확인했는가.

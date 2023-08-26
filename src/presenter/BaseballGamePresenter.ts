@@ -22,21 +22,23 @@ class BaseballGamePresenter {
   }
 
   run() {
-    readAnswer((input: string) => {
-      try {
-        this.#checkInput(input);
-      } catch (message) {
-        printError(message as string);
-        this.run();
-      }
-    });
+    readAnswer(this.#handleAnswerInput.bind(this));
   }
 
-  #checkInput(input: string) {
-    const userNumbers = input.split('').map(Number);
-    checkValidLength(userNumbers.length);
-    checkHasNoDuplicates(userNumbers);
-    this.#countInput(userNumbers);
+  #handleAnswerInput(input: string) {
+    try {
+      const userNumbers = input.split('').map(Number);
+      this.#checkInput(userNumbers);
+    } catch (message) {
+      printError(message as string);
+      this.run();
+    }
+  }
+
+  #checkInput(numbers: number[]) {
+    checkValidLength(numbers.length);
+    checkHasNoDuplicates(numbers);
+    this.#countInput(numbers);
   }
 
   #countInput(numbers: number[]) {
@@ -56,15 +58,17 @@ class BaseballGamePresenter {
   }
 
   #checkRetry() {
-    readGameCommand((input: string) => {
-      try {
-        checkGameCommand(input);
-        input === COMMAND.retry ? this.#retry() : this.#end();
-      } catch (message) {
-        printError(message as string);
-        this.#checkRetry();
-      }
-    });
+    readGameCommand(this.#handleGameCommandInput.bind(this));
+  }
+
+  #handleGameCommandInput(input: string) {
+    try {
+      checkGameCommand(input);
+      input === COMMAND.retry ? this.#retry() : this.#end();
+    } catch (message) {
+      printError(message as string);
+      this.#checkRetry();
+    }
   }
 
   #retry() {
