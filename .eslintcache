@@ -1,0 +1,177 @@
+[
+  {
+    "/Users/wonmac/code2023/effective-typescript-assignment-1/.eslintrc.js": "1",
+    "/Users/wonmac/code2023/effective-typescript-assignment-1/__tests__/ApplicationTest.js": "2",
+    "/Users/wonmac/code2023/effective-typescript-assignment-1/__tests__/StringTest.js": "3",
+    "/Users/wonmac/code2023/effective-typescript-assignment-1/src/App.ts": "4"
+  },
+  {
+    "size": 363,
+    "mtime": 1692941066826,
+    "results": "5",
+    "hashOfConfig": "6"
+  },
+  {
+    "size": 1495,
+    "mtime": 1692695181246,
+    "results": "7",
+    "hashOfConfig": "8"
+  },
+  {
+    "size": 1018,
+    "mtime": 1692695181253,
+    "results": "9",
+    "hashOfConfig": "8"
+  },
+  {
+    "size": 49,
+    "mtime": 1692695151666,
+    "results": "10",
+    "hashOfConfig": "6"
+  },
+  {
+    "filePath": "11",
+    "messages": "12",
+    "suppressedMessages": "13",
+    "errorCount": 1,
+    "fatalErrorCount": 1,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": null
+  },
+  "os4paj",
+  {
+    "filePath": "14",
+    "messages": "15",
+    "suppressedMessages": "16",
+    "errorCount": 3,
+    "fatalErrorCount": 0,
+    "warningCount": 2,
+    "fixableErrorCount": 1,
+    "fixableWarningCount": 0,
+    "source": null
+  },
+  "s8mhug",
+  {
+    "filePath": "17",
+    "messages": "18",
+    "suppressedMessages": "19",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  {
+    "filePath": "20",
+    "messages": "21",
+    "suppressedMessages": "22",
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0
+  },
+  "/Users/wonmac/code2023/effective-typescript-assignment-1/.eslintrc.js",
+  [
+    "23"
+  ],
+  [],
+  "/Users/wonmac/code2023/effective-typescript-assignment-1/__tests__/ApplicationTest.js",
+  [
+    "24",
+    "25",
+    "26",
+    "27",
+    "28"
+  ],
+  [],
+  "/Users/wonmac/code2023/effective-typescript-assignment-1/__tests__/StringTest.js",
+  [],
+  [],
+  "/Users/wonmac/code2023/effective-typescript-assignment-1/src/App.ts",
+  [],
+  [],
+  {
+    "ruleId": null,
+    "fatal": true,
+    "severity": 2,
+    "message": "29",
+    "nodeType": null
+  },
+  {
+    "ruleId": "30",
+    "severity": 1,
+    "message": "31",
+    "line": 1,
+    "column": 13,
+    "nodeType": "32",
+    "messageId": "33",
+    "endLine": 1,
+    "endColumn": 34
+  },
+  {
+    "ruleId": "34",
+    "severity": 2,
+    "message": "35",
+    "line": 1,
+    "column": 21,
+    "nodeType": "36",
+    "endLine": 1,
+    "endColumn": 33
+  },
+  {
+    "ruleId": "37",
+    "severity": 2,
+    "message": "38",
+    "line": 1,
+    "column": 21,
+    "nodeType": "36",
+    "endLine": 1,
+    "endColumn": 33
+  },
+  {
+    "ruleId": "30",
+    "severity": 1,
+    "message": "31",
+    "line": 2,
+    "column": 22,
+    "nodeType": "32",
+    "messageId": "33",
+    "endLine": 2,
+    "endColumn": 59
+  },
+  {
+    "ruleId": "39",
+    "severity": 2,
+    "message": "40",
+    "line": 2,
+    "column": 22,
+    "nodeType": "32",
+    "endLine": 2,
+    "endColumn": 59,
+    "fix": "41"
+  },
+  "Parsing error: ESLint was configured to run on `<tsconfigRootDir>/.eslintrc.js` using `parserOptions.project`: /users/wonmac/code2023/effective-typescript-assignment-1/tsconfig.json\nHowever, that TSConfig does not include this file. Either:\n- Change ESLint's list of included files to not include this file\n- Change that TSConfig to include this file\n- Create a new TSConfig that includes this file and include it in your parserOptions.project\nSee the typescript-eslint docs for more info: https://typescript-eslint.io/linting/troubleshooting#i-get-errors-telling-me-eslint-was-configured-to-run--however-that-tsconfig-does-not--none-of-those-tsconfigs-include-this-file",
+  "@typescript-eslint/no-var-requires",
+  "Require statement not part of import statement.",
+  "CallExpression",
+  "noVarReqs",
+  "import/no-unresolved",
+  "Unable to resolve path to module '../src/App'.",
+  "Literal",
+  "import/extensions",
+  "Missing file extension for \"../src/App\"",
+  "import/order",
+  "`@woowacourse/mission-utils` import should occur before import of `../src/App`",
+  {
+    "range": "42",
+    "text": "43"
+  },
+  [
+    0,
+    95
+  ],
+  "const MissionUtils = require('@woowacourse/mission-utils');\nconst App = require('../src/App');\n"
+]
