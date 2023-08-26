@@ -1,10 +1,6 @@
 import { Console } from '@woowacourse/mission-utils';
 import { OUTPUT_MESSAGE } from '../constants/Message';
-
-interface Count {
-  ball: number;
-  strike: number;
-}
+import { Count } from '../type/Game';
 
 const printStart = () => {
   Console.print(OUTPUT_MESSAGE.start);
