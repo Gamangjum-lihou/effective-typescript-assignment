@@ -1,5 +1,5 @@
-const { Random } = require('@woowacourse/mission-utils');
-const game = require('../constants/Game');
+import { Random } from '@woowacourse/mission-utils';
+import { NUMBER_LENGTH } from '../constants/Game';
 
 class BaseballGame {
   #computer: number[] = [];
@@ -9,7 +9,7 @@ class BaseballGame {
   }
 
   setComputer() {
-    while (this.#computer.length < game.NUMBER_LENGTH) {
+    while (this.#computer.length < NUMBER_LENGTH) {
       const randomNum = Random.pickNumberInRange(1, 9);
       if (!this.#computer.includes(randomNum)) {
         this.#computer.push(randomNum);
@@ -23,4 +23,4 @@ class BaseballGame {
   }
 }
 
-module.exports = BaseballGame;
+export default BaseballGame;

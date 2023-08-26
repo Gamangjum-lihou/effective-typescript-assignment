@@ -30,11 +30,4 @@ const ERROR_MESSAGE = Object.freeze({
   retry_or_quit: `${ERROR} '${COMMAND.retry}'(새로 시작) 또는 '${COMMAND.quit}'(게임 종료)를 입력해주세요.`
 });
 
-module.exports = {
-  ERROR,
-  JUDGE,
-  COMMAND,
-  INPUT_MESSAGE,
-  OUTPUT_MESSAGE,
-  ERROR_MESSAGE
-};
+export { ERROR, JUDGE, COMMAND, INPUT_MESSAGE, OUTPUT_MESSAGE, ERROR_MESSAGE };

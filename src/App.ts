@@ -1,11 +1,14 @@
-const baseballGamePresenter = require('./presenter/BaseballGamePresenter');
+import BaseballGamePresenter from './presenter/BaseballGamePresenter';
 
 class App {
-  #baseballGamePresenter = new baseballGamePresenter();
+  #presenter = new BaseballGamePresenter();
 
   play() {
-    this.#baseballGamePresenter.run();
+    this.#presenter.run();
   }
 }
 
-module.exports = App;
+const app = new App();
+app.play();
+
+export default App;

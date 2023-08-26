@@ -1,8 +1,9 @@
-const { printStart, readAnswer, printError } = require('../view/View');
-const baseballGame = require('../model/BaseballGame');
+import BaseballGame from '../model/BaseballGame';
+import { printStart, printError } from '../view/OutputView';
+import { readAnswer } from '../view/InputView';
 
 class BaseballGamePresenter {
-  #baseballGame = new baseballGame();
+  #baseballGame = new BaseballGame();
 
   constructor() {
     printStart();
@@ -12,11 +13,11 @@ class BaseballGamePresenter {
     readAnswer((input: string) => {
       try {
       } catch (message) {
-        printError(message);
+        printError(message as string);
         this.run();
       }
     });
   }
 }
 
-module.exports = BaseballGamePresenter;
+export default BaseballGamePresenter;
