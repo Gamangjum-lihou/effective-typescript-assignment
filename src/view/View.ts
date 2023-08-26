@@ -1,12 +1,12 @@
-const { Console } = require('@woowacourse/mission-utils');
-const { MESSAGE } = require('../constants/message');
+import { Console } from '@woowacourse/mission-utils';
+import { MESSAGE } from '../constants/message';
 
 const View = {
   printStartMessage: () => {
     return Console.print(MESSAGE.START_GAME);
   },
 
-  inputPlayerNumbers: (callback: () => void) => {
+  inputPlayerNumbers: (callback: (input: string) => void) => {
     return Console.readLine(MESSAGE.INPUT_NUMBER, callback);
   },
 
@@ -14,7 +14,7 @@ const View = {
     return Console.print(message);
   },
 
-  printRestartMessage: (callback: () => void) => {
+  printRestartMessage: (callback: (input: string) => void) => {
     return Console.readLine(MESSAGE.RESTART_GAME, callback);
   },
 
@@ -23,4 +23,4 @@ const View = {
   },
 };
 
-module.exports = View;
+export default View;

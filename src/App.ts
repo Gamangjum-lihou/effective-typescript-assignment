@@ -1,4 +1,4 @@
-const Controller = require('./controller/Controller');
+import Controller from './controller/Controller';
 
 class App {
   play() {

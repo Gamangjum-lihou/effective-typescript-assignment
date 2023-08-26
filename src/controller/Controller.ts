@@ -1,14 +1,14 @@
-const View = require('../view/View');
-const Computer = require('../model/Computer');
-const {
-  isValidNumbers,
-  isValidLength,
+import View from '../view/View';
+import Computer from '../model/Computer';
+import { GAME_CODE } from '../constants/game';
+import { MESSAGE } from '../constants/message';
+import { convertToNumberArray } from '../utils/convert';
+import {
   hasRepeatedNumbers,
   isValidCode,
-} = require('../utils/validation');
-const { convertToNumberArray } = require('../utils/convert');
-const { GAME_CODE } = require('../constants/game');
-const { MESSAGE } = require('../constants/message');
+  isValidLength,
+  isValidNumbers,
+} from '../utils/validation';
 
 class Controller {
   #computer;
@@ -71,4 +71,4 @@ class Controller {
   };
 }
 
-module.exports = Controller;
+export default Controller;

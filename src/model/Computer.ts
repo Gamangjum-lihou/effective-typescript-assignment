@@ -1,6 +1,6 @@
-const { Random } = require('@woowacourse/mission-utils');
-const { VALIDATION } = require('../constants/validation');
-const { GAME_SIGN } = require('../constants/game');
+import { Random } from '@woowacourse/mission-utils';
+import { GAME_SIGN } from '../constants/game';
+import { VALIDATION } from '../constants/validation';
 
 interface Count {
   strike: number;
@@ -72,4 +72,4 @@ class Computer {
   };
 }
 
-module.exports = Computer;
+export default Computer;
