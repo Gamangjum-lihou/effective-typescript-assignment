@@ -33,7 +33,7 @@ export default class Validation {
   };
 
   isValidCommand = (input: string) => {
-    if (input !== COMMAND.exit || input !== COMMAND.retry) {
+    if (input !== COMMAND.exit && input !== COMMAND.retry) {
       throw new Error(ERROR_MESSAGE.invalidCommand);
     }
   };

@@ -1,9 +1,9 @@
 import Computer from "../model/Computer";
 import Player from "../model/Player";
-import {printEnd, printScore, printStart} from "../view/OutputView";
-import {close, readPlayerCommand, readRetryCommand} from "../view/InputView";
-import {BallCounts, Referee} from "../model/Referee";
-import {COMMAND} from "../constants/Controller";
+import { printEnd, printScore, printStart } from "../view/OutputView";
+import { close, readPlayerCommand, readRetryCommand } from "../view/InputView";
+import { BallCounts, Referee } from "../model/Referee";
+import { COMMAND } from "../constants/Controller";
 
 export default class BaseballManager {
   #computer: Computer;
@@ -20,13 +20,14 @@ export default class BaseballManager {
     this.#computer = new Computer();
     this.#player = new Player();
     printStart();
+    console.log(this.#computer.getNumber());
     readPlayerCommand(this.sendPlayerCommand);
-  }
+  };
 
   sendPlayerCommand = (input: string) => {
     this.#player.setNumber(input);
     this.check();
-  }
+  };
 
   check = () => {
     const playerNumber = this.#player.getNumber();
@@ -34,7 +35,7 @@ export default class BaseballManager {
     this.#score = this.#referee.check(playerNumber, computerNumber);
     printScore(this.#score);
     this.option();
-  }
+  };
 
   option = () => {
     if (this.#score.clear) {
@@ -43,7 +44,7 @@ export default class BaseballManager {
     } else {
       readPlayerCommand(this.sendPlayerCommand);
     }
-  }
+  };
 
   retry = (command: string) => {
     if (command === COMMAND.retry) {
@@ -51,5 +52,5 @@ export default class BaseballManager {
     } else if (command === COMMAND.exit) {
       close();
     }
-  }
+  };
 }
