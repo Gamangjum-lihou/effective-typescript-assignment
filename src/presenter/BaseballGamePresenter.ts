@@ -44,7 +44,9 @@ class BaseballGamePresenter {
     }
   }
 
-  #finish() {}
+  #finish() {
+    printEnd();
+  }
 }
 
 export default BaseballGamePresenter;
