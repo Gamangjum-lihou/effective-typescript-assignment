@@ -22,6 +22,4 @@ export class Referee {
 
     return { ball, strike, clear: (strike === GENERATE_NUMBER.length) };
   }
-
-
 }
