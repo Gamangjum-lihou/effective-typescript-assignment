@@ -5,13 +5,8 @@
   "dependencies": {
     "@woowacourse/mission-utils": "^1.0.6"
   },
-  "devDependencies": {
-    "jest": "^29.6.0"
-  },
   "scripts": {
-    "build": "rm -rf dist && tsc",
-    "start": "npm build && cd dist && node App.js",
-    "test": "npm build && jest --detectOpenHandles"
+    "test": "jest --detectOpenHandles"
   },
   "repository": {
     "type": "git",
