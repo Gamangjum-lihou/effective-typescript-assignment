@@ -1,5 +1,5 @@
 import { Random } from '@woowacourse/mission-utils';
-import { NUMBER_LENGTH, START, END } from '../constants/Game';
+import { INPUT } from '../constants/Game';
 import { Count } from '../type/Game';
 
 class BaseballGame {
@@ -10,8 +10,8 @@ class BaseballGame {
   }
 
   setComputer() {
-    while (this.#computer.length < NUMBER_LENGTH) {
-      const randomNum = Random.pickNumberInRange(START, END);
+    while (this.#computer.length < INPUT.number_length) {
+      const randomNum = Random.pickNumberInRange(INPUT.start, INPUT.end);
       if (!this.#computer.includes(randomNum)) this.#computer.push(randomNum);
     }
   }

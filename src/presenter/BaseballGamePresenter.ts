@@ -12,7 +12,7 @@ import {
   checkGameCommand
 } from './InputValidator';
 import { Console } from '@woowacourse/mission-utils';
-import { COMMAND } from '../constants/Message';
+import { INPUT, COMMAND } from '../constants/Game';
 
 class BaseballGamePresenter {
   #baseballGame = new BaseballGame();
@@ -45,7 +45,7 @@ class BaseballGamePresenter {
     try {
       const { ball, strike } = this.#baseballGame.count(numbers);
       printJudge({ ball, strike });
-      strike === 3 ? this.#finish() : this.run();
+      strike === INPUT.number_length ? this.#finish() : this.run();
     } catch (message) {
       printError(message as string);
       this.run();

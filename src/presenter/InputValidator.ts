@@ -1,15 +1,15 @@
-import { NUMBER_LENGTH } from '../constants/Game';
-import { COMMAND, ERROR_MESSAGE } from '../constants/Message';
+import { INPUT, COMMAND } from '../constants/Game';
+import { ERROR_MESSAGE } from '../constants/Message';
 
 const checkValidLength = (length: number) => {
-  if (length !== NUMBER_LENGTH) {
+  if (length !== INPUT.number_length) {
     throw ERROR_MESSAGE.number_digit;
   }
 };
 
 const checkHasNoDuplicates = (numbers: number[]) => {
   const numberSet = new Set([...numbers]);
-  if (numberSet.size !== NUMBER_LENGTH) {
+  if (numberSet.size !== INPUT.number_length) {
     throw ERROR_MESSAGE.number_digit;
   }
 };

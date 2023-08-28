@@ -1,5 +1,16 @@
-const NUMBER_LENGTH = 3;
-const START = 1;
-const END = 9;
+export const INPUT = Object.freeze({
+  number_length: 3,
+  start: 1,
+  end: 3
+});
 
-export { NUMBER_LENGTH, START, END };
+export const JUDGE = Object.freeze({
+  ball: '볼',
+  strike: '스트라이크',
+  nothing: '낫싱'
+});
+
+export const COMMAND = Object.freeze({
+  retry: '1',
+  quit: '2'
+});
