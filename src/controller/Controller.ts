@@ -19,12 +19,12 @@ class Controller {
 
   start() {
     View.printStartMessage();
-    this.compare();
+    this.#compare();
   }
 
-  compare() {
+  #compare() {
     View.inputPlayerNumbers((input: string) => {
-      this.inputValidation(input);
+      this.#inputValidation(input);
 
       const playerNumbers = convertToNumberArray(input);
 
@@ -36,20 +36,20 @@ class Controller {
       const isWin = count.strike === GAME_CODE.WIN;
       if (isWin) {
         View.printMessage(MESSAGE.WIN_GAME);
-        this.askRestart();
+        this.#askRestart();
       } else {
-        this.compare();
+        this.#compare();
       }
     });
   }
 
-  inputValidation(input: string) {
+  #inputValidation(input: string) {
     isValidNumbers(input);
     isValidLength(input);
     hasRepeatedNumbers(input);
   }
 
-  askRestart() {
+  #askRestart() {
     View.printRestartMessage((input: string) => {
       const code = Number(input);
 
@@ -60,12 +60,12 @@ class Controller {
       }
 
       if (code === GAME_CODE.FINISH) {
-        this.gameOver();
+        this.#gameOver();
       }
     });
   }
 
-  gameOver() {
+  #gameOver() {
     View.printMessage(MESSAGE.GAME_OVER);
     View.consoleClose();
   }

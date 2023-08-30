@@ -11,10 +11,10 @@ class Computer {
   #numbers;
 
   constructor() {
-    this.#numbers = this.setNumbers();
+    this.#numbers = this.#setNumbers();
   }
 
-  setNumbers() {
+  #setNumbers() {
     const computer: number[] = [];
 
     while (computer.length < VALIDATION.LENGTH) {
