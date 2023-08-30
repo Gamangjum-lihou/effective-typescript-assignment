@@ -27,7 +27,6 @@ class Controller {
       this.#inputValidation(input);
 
       const playerNumbers = convertToNumberArray(input);
-
       const count = this.#computer.compareNumbers(playerNumbers);
       const hintMessage = this.#computer.hintMessage(count);
 
