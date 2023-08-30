@@ -17,12 +17,12 @@ class Controller {
     this.#computer = new Computer();
   }
 
-  start = () => {
+  start() {
     View.printStartMessage();
     this.compare();
-  };
+  }
 
-  compare = () => {
+  compare() {
     View.inputPlayerNumbers((input: string) => {
       this.inputValidation(input);
 
@@ -41,15 +41,15 @@ class Controller {
         this.compare();
       }
     });
-  };
+  }
 
-  inputValidation = (input: string) => {
+  inputValidation(input: string) {
     isValidNumbers(input);
     isValidLength(input);
     hasRepeatedNumbers(input);
-  };
+  }
 
-  askRestart = () => {
+  askRestart() {
     View.printRestartMessage((input: string) => {
       const code = Number(input);
 
@@ -63,12 +63,12 @@ class Controller {
         this.gameOver();
       }
     });
-  };
+  }
 
-  gameOver = () => {
+  gameOver() {
     View.printMessage(MESSAGE.GAME_OVER);
     View.consoleClose();
-  };
+  }
 }
 
 export default Controller;

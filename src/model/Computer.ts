@@ -14,7 +14,7 @@ class Computer {
     this.#numbers = this.setNumbers();
   }
 
-  setNumbers = () => {
+  setNumbers() {
     const computer: number[] = [];
 
     while (computer.length < VALIDATION.LENGTH) {
@@ -28,9 +28,9 @@ class Computer {
     }
 
     return computer;
-  };
+  }
 
-  compareNumbers = (playerNumbers: number[]): Count => {
+  compareNumbers(playerNumbers: number[]): Count {
     const count = { strike: 0, ball: 0 };
 
     playerNumbers.forEach((number, index) => {
@@ -47,9 +47,9 @@ class Computer {
     });
 
     return count;
-  };
+  }
 
-  hintMessage = (count: Count) => {
+  hintMessage(count: Count) {
     const { strike, ball } = count;
     let message = '';
 
@@ -69,7 +69,7 @@ class Computer {
     }
 
     return message;
-  };
+  }
 }
 
 export default Computer;
