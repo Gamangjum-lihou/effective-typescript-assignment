@@ -27,13 +27,13 @@ type Validation<T> = (input: T) => void;
 export const hasRepeatedNumbers: Validation<string> = (input) => {
   const inputSet = new Set([...input]);
   if (inputSet.size !== input.length) {
-    throw new Error(ERROR_MESSAGE.NO_REPEAT);
+    throw new Error(ERROR_MESSAGE.no_repeat);
   }
 };
 
 export const isValidCode: Validation<number> = (code) => {
-  if (code !== GAME_CODE.RESTART && code !== GAME_CODE.FINISH) {
-    throw new Error(ERROR_MESSAGE.INVALID_CODE);
+  if (code !== GAME_CODE.restart && code !== GAME_CODE.finish) {
+    throw new Error(ERROR_MESSAGE.invalid_code);
   }
 };
 ```
@@ -92,11 +92,11 @@ const a2 = [1, 2, 3] as const; // Type is readonly [1,2,3]
 ```typescript
 // constants/validation.ts
 export const VALIDATION = {
-  REG_EXP: /^[0-9]+$/,
-  LENGTH: 3,
-  MIN_NUMBER: 1,
-  MAX_NUMBER: 9,
-  INVALID_NUMBER: 0,
+  reg_exp: /^[0-9]+$/,
+  length: 3,
+  min_number: 1,
+  max_number: 9,
+  invalid_number: 0,
 } as const;
 ```
 

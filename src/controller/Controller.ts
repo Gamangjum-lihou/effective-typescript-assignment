@@ -32,9 +32,9 @@ class Controller {
 
       View.printMessage(hintMessage);
 
-      const isWin = count.strike === GAME_CODE.WIN;
+      const isWin = count.strike === GAME_CODE.win;
       if (isWin) {
-        View.printMessage(MESSAGE.WIN_GAME);
+        View.printMessage(MESSAGE.win_game);
         this.#askRestart();
       } else {
         this.#compare();
@@ -54,18 +54,18 @@ class Controller {
 
       isValidCode(code);
 
-      if (code === GAME_CODE.RESTART) {
+      if (code === GAME_CODE.restart) {
         this.start();
       }
 
-      if (code === GAME_CODE.FINISH) {
+      if (code === GAME_CODE.finish) {
         this.#gameOver();
       }
     });
   }
 
   #gameOver() {
-    View.printMessage(MESSAGE.GAME_OVER);
+    View.printMessage(MESSAGE.game_over);
     View.consoleClose();
   }
 }

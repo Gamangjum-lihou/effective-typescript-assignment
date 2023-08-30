@@ -1,12 +1,12 @@
 export const GAME_CODE = {
-  RESTART: 1,
-  FINISH: 2,
-  WIN: 3,
+  restart: 1,
+  finish: 2,
+  win: 3,
 } as const;
 
 export const GAME_SIGN = {
-  BALL: '볼',
-  STRIKE: '스트라이크',
-  NOTHING: '낫싱',
-  BLANK: ' ',
+  ball: '볼',
+  strike: '스트라이크',
+  nothing: '낫싱',
+  blank: ' ',
 } as const;

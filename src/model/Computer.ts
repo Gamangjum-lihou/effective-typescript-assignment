@@ -17,10 +17,10 @@ class Computer {
   #setNumbers() {
     const computer: number[] = [];
 
-    while (computer.length < VALIDATION.LENGTH) {
+    while (computer.length < VALIDATION.length) {
       const number = Random.pickNumberInRange(
-        VALIDATION.MIN_NUMBER,
-        VALIDATION.MAX_NUMBER
+        VALIDATION.min_number,
+        VALIDATION.max_number
       );
       if (!computer.includes(number)) {
         computer.push(number);
@@ -54,18 +54,18 @@ class Computer {
     let message = '';
 
     if (strike === 0 && ball === 0) {
-      message = GAME_SIGN.NOTHING;
+      message = GAME_SIGN.nothing;
     }
 
     if (ball > 0) {
-      message += `${ball}${GAME_SIGN.BALL}`;
+      message += `${ball}${GAME_SIGN.ball}`;
     }
 
     if (strike > 0) {
       if (ball !== 0) {
-        message += GAME_SIGN.BLANK;
+        message += GAME_SIGN.blank;
       }
-      message += `${strike}${GAME_SIGN.STRIKE}`;
+      message += `${strike}${GAME_SIGN.strike}`;
     }
 
     return message;

@@ -3,11 +3,11 @@ import { MESSAGE } from '../constants/message';
 
 const View = {
   printStartMessage: () => {
-    return Console.print(MESSAGE.START_GAME);
+    return Console.print(MESSAGE.start_game);
   },
 
   inputPlayerNumbers: (callback: (input: string) => void) => {
-    return Console.readLine(MESSAGE.INPUT_NUMBER, callback);
+    return Console.readLine(MESSAGE.input_number, callback);
   },
 
   printMessage: (message: string) => {
@@ -15,7 +15,7 @@ const View = {
   },
 
   printRestartMessage: (callback: (input: string) => void) => {
-    return Console.readLine(MESSAGE.RESTART_GAME, callback);
+    return Console.readLine(MESSAGE.restart_game, callback);
   },
 
   consoleClose: () => {

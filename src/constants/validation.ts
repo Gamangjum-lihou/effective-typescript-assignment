@@ -1,7 +1,7 @@
 export const VALIDATION = {
-  REG_EXP: /^[0-9]+$/,
-  LENGTH: 3,
-  MIN_NUMBER: 1,
-  MAX_NUMBER: 9,
-  INVALID_NUMBER: 0,
+  reg_exp: /^[0-9]+$/,
+  length: 3,
+  min_number: 1,
+  max_number: 9,
+  invalid_number: 0,
 } as const;
