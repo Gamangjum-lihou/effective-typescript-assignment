@@ -35,13 +35,13 @@ class Computer {
 
     playerNumbers.forEach((number, index) => {
       const isStrike = number === this.#numbers[index];
-      const isBall = this.#numbers.includes(number);
+      const isBall = this.#numbers.includes(number) && !isStrike;
 
       if (isStrike) {
         count.strike += 1;
       }
 
-      if (isBall && !isStrike) {
+      if (isBall) {
         count.ball += 1;
       }
     });
