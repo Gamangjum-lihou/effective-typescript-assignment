@@ -1,19 +1,30 @@
 import App from '../src/App';
 import { Console, Random } from '@woowacourse/mission-utils';
+import { jest, describe, expect, test } from '@jest/globals';
 
 const mockQuestions = (answers: string[]) => {
   Console.readLine = jest.fn();
   answers.reduce((acc, input) => {
-    return acc.mockImplementationOnce((_, callback) => {
-      callback(input);
-    });
+    return (
+      acc as jest.Mock<
+        (query: string, callback: (input: string) => void) => void
+      >
+    ).mockImplementationOnce(
+      (query: string, callback: (input: string) => void) => {
+        callback(input);
+      }
+    );
   }, Console.readLine);
 };
 
 const mockRandoms = (numbers: number[]) => {
-  Random.pickNumberInRange = jest.fn();
+  Random.pickNumberInRange = jest.fn() as jest.Mock<
+    typeof Random.pickNumberInRange
+  >;
   numbers.reduce((acc, number) => {
-    return acc.mockReturnValueOnce(number);
+    return (
+      acc as jest.Mock<(startInclusive: number, endInclusive: number) => number>
+    ).mockReturnValueOnce(number);
   }, Random.pickNumberInRange);
 };
 
