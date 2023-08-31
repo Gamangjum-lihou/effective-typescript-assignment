@@ -15,7 +15,7 @@ class Computer {
   }
 
   #setNumbers() {
-    const computer = new Set();
+    const computer: Set<number> = new Set();
     const { length, min_number, max_number } = VALIDATION;
 
     while (computer.size < length) {
