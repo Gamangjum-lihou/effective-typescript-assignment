@@ -26,6 +26,10 @@ class Computer {
     return [...computer];
   }
 
+  resetNumbers() {
+    this.#numbers = this.#setNumbers();
+  }
+
   compareNumbers(playerNumbers: number[]): Count {
     const count = { strike: 0, ball: 0 };
 

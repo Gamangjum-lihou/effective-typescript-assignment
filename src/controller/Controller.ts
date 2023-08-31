@@ -55,6 +55,7 @@ class Controller {
       isValidCode(code);
 
       if (code === GAME_CODE.restart) {
+        this.#computer.resetNumbers();
         this.start();
       }
 
