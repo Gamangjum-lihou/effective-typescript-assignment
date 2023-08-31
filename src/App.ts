@@ -7,7 +7,7 @@ class App {
   }
 }
 
-module.exports = App;
+export default App;
 
 const app = new App();
 app.play();
