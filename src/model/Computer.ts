@@ -15,19 +15,15 @@ class Computer {
   }
 
   #setNumbers() {
-    const computer: number[] = [];
+    const computer = new Set();
+    const { length, min_number, max_number } = VALIDATION;
 
-    while (computer.length < VALIDATION.length) {
-      const number = Random.pickNumberInRange(
-        VALIDATION.min_number,
-        VALIDATION.max_number
-      );
-      if (!computer.includes(number)) {
-        computer.push(number);
-      }
+    while (computer.size < length) {
+      const number = Random.pickNumberInRange(min_number, max_number);
+      computer.add(number);
     }
 
-    return computer;
+    return [...computer];
   }
 
   compareNumbers(playerNumbers: number[]): Count {
