@@ -1,5 +1,5 @@
 import { Console } from '@woowacourse/mission-utils';
-import OutputView from './OutputView';
+import { OutputView, PrintHint } from './OutputView';
 import { INPUT_MESSAGE } from '../constants/Messages';
 import Validator from '../lib/validator';
 
@@ -12,6 +12,10 @@ const View = {
     Console.readLine(INPUT_MESSAGE.game_number, userInput => {
       callback(Validator.checkGameNumbers(userInput));
     });
+  },
+
+  printHint(value: PrintHint) {
+    OutputView.printHint(value);
   },
 };
 

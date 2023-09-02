@@ -1,10 +1,26 @@
 import { Console } from '@woowacourse/mission-utils';
 import { OUTPUT_MESSAGE } from '../constants/Messages';
 
-const OutputView = {
+export interface PrintHint {
+  ball: number;
+  strike: number;
+}
+
+export const OutputView = {
   printStart() {
     Console.print(OUTPUT_MESSAGE.start);
   },
-};
 
-export default OutputView;
+  printHint({ ball, strike }: PrintHint) {
+    if (!ball && !strike) {
+      return Console.print(OUTPUT_MESSAGE.noting);
+    }
+    if (ball && strike) {
+      return Console.print(OUTPUT_MESSAGE.ball_and_strike(ball, strike));
+    }
+    if (strike) {
+      return Console.print(OUTPUT_MESSAGE.strike(strike));
+    }
+    return Console.print(OUTPUT_MESSAGE.ball(ball));
+  },
+};
