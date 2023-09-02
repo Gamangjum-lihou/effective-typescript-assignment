@@ -27,6 +27,9 @@ class BaseballController {
         break;
       }
     }
+    const userSelect = yield this.#view.readGameCommand;
+    return;
+
     yield* this.#run();
   }
 }

@@ -14,6 +14,12 @@ const View = {
     });
   },
 
+  readGameCommand(callback: any) {
+    Console.readLine(INPUT_MESSAGE.game_command, userInput => {
+      callback(Validator.checkGameCommand(userInput));
+    });
+  },
+
   printHint(value: PrintHint) {
     OutputView.printHint(value);
   },
