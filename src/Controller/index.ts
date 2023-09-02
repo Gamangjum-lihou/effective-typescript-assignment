@@ -1,14 +1,25 @@
 import View from '../View';
+import Model from '../Model/index';
+import runGenerator from '../utils/runGenerator';
 
 class BaseballController {
   #view: typeof View;
+  #model: Model;
 
   constructor() {
     this.#view = View;
+    this.#model = new Model();
   }
 
   play() {
     this.#view.printStart();
+    runGenerator(this.#run.bind(this));
+  }
+
+  *#run(): Generator<unknown> {
+    this.#model.setGame();
+    return;
+    yield* this.#run();
   }
 }
 
