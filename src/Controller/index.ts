@@ -18,6 +18,10 @@ class BaseballController {
 
   *#run(): Generator<unknown> {
     this.#model.setGame();
+    while (true) {
+      const userNumbers = yield this.#view.readGameNumbers;
+      break;
+    }
     return;
     yield* this.#run();
   }
