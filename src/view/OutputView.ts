@@ -2,15 +2,15 @@ import { Console } from '@woowacourse/mission-utils'
 import { OUTPUT_MESSAGE } from '../constants/Message'
 import { Count } from '../type/Game'
 
-const printStart = () => {
+export const printStart = () => {
   Console.print(OUTPUT_MESSAGE.start)
 }
 
-const printError = (message: string) => {
+export const printError = (message: string) => {
   Console.print(message)
 }
 
-const printJudge = ({ ball, strike }: Count) => {
+export const printJudge = ({ ball, strike }: Count) => {
   if (ball == 0 && strike == 0) {
     Console.print(OUTPUT_MESSAGE.nothing)
     return
@@ -30,8 +30,6 @@ const printJudge = ({ ball, strike }: Count) => {
   )
 }
 
-const printEnd = () => {
+export const printEnd = () => {
   Console.print(OUTPUT_MESSAGE.end)
 }
-
-export { printStart, printError, printJudge, printEnd }
