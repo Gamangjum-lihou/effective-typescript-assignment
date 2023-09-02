@@ -17,7 +17,8 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint --cache .",
-    "format": "prettier --cache --write ."
+    "format": "prettier --cache --write .",
+    "play": "ts-node src/App.ts"
   },
   "repository": {
     "type": "git",
