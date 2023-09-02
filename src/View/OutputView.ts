@@ -27,4 +27,8 @@ export const OutputView = {
   printSuccess() {
     Console.print(OUTPUT_MESSAGE.success);
   },
+
+  finishGame() {
+    Console.close();
+  },
 };

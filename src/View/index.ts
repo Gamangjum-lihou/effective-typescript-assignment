@@ -27,6 +27,10 @@ const View = {
   printSuccess() {
     OutputView.printSuccess();
   },
+
+  finishGame() {
+    OutputView.finishGame();
+  },
 };
 
 export default View;

@@ -1,5 +1,5 @@
 import { ERROR_MESSAGE } from '../../constants/Messages';
-import GENERATOR from '../../constants/System';
+import { GENERATOR } from '../../constants/System';
 import ValidationError from '../error/ValidationError';
 
 class GameNumber {

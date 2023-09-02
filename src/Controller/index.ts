@@ -1,6 +1,7 @@
 import View from '../View';
 import Model from '../Model/index';
 import runGenerator from '../utils/runGenerator';
+import { SELECT_FINISH } from '../constants/System';
 
 class BaseballController {
   #view: typeof View;
@@ -27,8 +28,12 @@ class BaseballController {
         break;
       }
     }
+
     const userSelect = yield this.#view.readGameCommand;
-    return;
+    if (userSelect === SELECT_FINISH) {
+      this.#view.finishGame();
+      return;
+    }
 
     yield* this.#run();
   }

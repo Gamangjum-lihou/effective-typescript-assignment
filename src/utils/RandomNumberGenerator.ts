@@ -1,5 +1,5 @@
 import { Random } from '@woowacourse/mission-utils';
-import GENERATOR from '../constants/System';
+import { GENERATOR } from '../constants/System';
 
 const RandomNumberGenerator = {
   generateRandomNumber(): number[] {
