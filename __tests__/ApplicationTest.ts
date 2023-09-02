@@ -1,17 +1,26 @@
 import App from '../src/App'
 import { Console, Random } from '@woowacourse/mission-utils'
+import { jest, describe, test, expect } from '@jest/globals'
 
-const mockQuestions = (answers) => {
-  Console.readLine = jest.fn()
-  answers.reduce((acc, input) => {
-    return acc.mockImplementationOnce((question, callback) => {
-      callback(input)
-    })
-  }, Console.readLine)
+const mockQuestions = (answers: any[]) => {
+  Console.readLine = jest.fn<typeof Console.readLine>()
+  answers.reduce(
+    (
+      acc: {
+        mockImplementationOnce: (arg0: typeof Console.readLine) => any
+      },
+      input: string,
+    ) => {
+      return acc.mockImplementationOnce((question, callback) => {
+        callback(input)
+      })
+    },
+    Console.readLine,
+  )
 }
 
-const mockRandoms = (numbers) => {
-  Random.pickNumberInRange = jest.fn()
+const mockRandoms = (numbers: any[]) => {
+  Random.pickNumberInRange = jest.fn<typeof Random.pickNumberInRange>()
   numbers.reduce((acc, number) => {
     return acc.mockReturnValueOnce(number)
   }, Random.pickNumberInRange)
@@ -37,7 +46,9 @@ describe('숫자 야구 게임', () => {
     ]
 
     mockRandoms(randoms)
+    console.log('mockRandoms(randoms)', mockRandoms(randoms))
     mockQuestions(answers)
+    console.log(' mockQuestions(answers)', mockQuestions(answers))
 
     const app = new App()
     app.play()
