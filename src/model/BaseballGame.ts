@@ -22,8 +22,8 @@ class BaseballGame {
   }
 
   count(numbers: number[]): Count {
-    let ball = 0,
-      strike = 0;
+    let ball = 0;
+    let strike = 0;
 
     for (let i = 0; i < this.#computer.length; i++) {
       if (this.#computer[i] === numbers[i]) strike += 1;
