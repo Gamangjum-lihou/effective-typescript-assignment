@@ -17,6 +17,10 @@ const View = {
   printHint(value: PrintHint) {
     OutputView.printHint(value);
   },
+
+  printSuccess() {
+    OutputView.printSuccess();
+  },
 };
 
 export default View;

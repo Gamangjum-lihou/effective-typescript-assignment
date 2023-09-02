@@ -23,4 +23,8 @@ export const OutputView = {
     }
     return Console.print(OUTPUT_MESSAGE.ball(ball));
   },
+
+  printSuccess() {
+    Console.print(OUTPUT_MESSAGE.success);
+  },
 };

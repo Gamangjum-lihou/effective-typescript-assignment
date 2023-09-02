@@ -22,9 +22,11 @@ class BaseballController {
       const userNumbers = yield this.#view.readGameNumbers;
       const score = this.#model.compareUserWithComputerNumbers(userNumbers as string);
       this.#view.printHint(score);
-      break;
+      if (this.#model.isThreeStrikes()) {
+        this.#view.printSuccess();
+        break;
+      }
     }
-    return;
     yield* this.#run();
   }
 }

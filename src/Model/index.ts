@@ -35,6 +35,12 @@ class BaseballModel {
     return this.#score;
   }
 
+  isThreeStrikes() {
+    const isThreeStrikes = this.#score.strike === 3;
+    this.#resetScore();
+    return isThreeStrikes;
+  }
+
   #resetScore() {
     this.#score = { ball: 0, strike: 0 };
   }
