@@ -1,14 +1,14 @@
-import BaseballGamePresenter from './presenter/BaseballGamePresenter';
+import BaseballGamePresenter from './presenter/BaseballGamePresenter'
 
 class App {
-  #presenter = new BaseballGamePresenter();
+  #presenter = new BaseballGamePresenter()
 
   play() {
-    this.#presenter.run();
+    this.#presenter.run()
   }
 }
 
-const app = new App();
-app.play();
+const app = new App()
+app.play()
 
-export default App;
+export default App

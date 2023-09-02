@@ -1,6 +1,6 @@
 interface Count {
-  ball: number;
-  strike: number;
+  ball: number
+  strike: number
 }
 
-export { Count };
+export { Count }
