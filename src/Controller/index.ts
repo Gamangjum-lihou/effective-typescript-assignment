@@ -20,6 +20,7 @@ class BaseballController {
     this.#model.setGame();
     while (true) {
       const userNumbers = yield this.#view.readGameNumbers;
+      const score = this.#model.compareUserWithComputerNumbers(userNumbers as string);
       break;
     }
     return;
