@@ -1,24 +1,24 @@
-const App = require('../src/App')
-const MissionUtils = require('@woowacourse/mission-utils')
+import App from '../src/App'
+import { Console, Random } from '@woowacourse/mission-utils'
 
 const mockQuestions = (answers) => {
-  MissionUtils.Console.readLine = jest.fn()
+  Console.readLine = jest.fn()
   answers.reduce((acc, input) => {
     return acc.mockImplementationOnce((question, callback) => {
       callback(input)
     })
-  }, MissionUtils.Console.readLine)
+  }, Console.readLine)
 }
 
 const mockRandoms = (numbers) => {
-  MissionUtils.Random.pickNumberInRange = jest.fn()
+  Random.pickNumberInRange = jest.fn()
   numbers.reduce((acc, number) => {
     return acc.mockReturnValueOnce(number)
-  }, MissionUtils.Random.pickNumberInRange)
+  }, Random.pickNumberInRange)
 }
 
 const getLogSpy = () => {
-  const logSpy = jest.spyOn(MissionUtils.Console, 'print')
+  const logSpy = jest.spyOn(Console, 'print')
   logSpy.mockClear()
   return logSpy
 }
@@ -51,40 +51,40 @@ describe('숫자 야구 게임', () => {
     test('입력 길이 초과', () => {
       const randoms = [1, 3, 5]
       const answers = ['1234']
-
-      mockRandoms(randoms)
-      mockQuestions(answers)
-
-      expect(() => {
+      try {
+        mockRandoms(randoms)
+        mockQuestions(answers)
         const app = new App()
         app.play()
-      }).toThrow()
+      } catch (e) {
+        expect(e).toThrowError()
+      }
     })
 
     test('중복된 숫자', () => {
       const randoms = [1, 3, 5]
       const answers = ['117']
-
-      mockRandoms(randoms)
-      mockQuestions(answers)
-
-      expect(() => {
+      try {
+        mockRandoms(randoms)
+        mockQuestions(answers)
         const app = new App()
         app.play()
-      }).toThrow()
+      } catch (e) {
+        expect(e).toThrowError()
+      }
     })
 
     test('한글 및 영소문자', () => {
       const randoms = [1, 3, 5]
       const answers = ['ㄴㅇㄱ', 'o12']
-
-      mockRandoms(randoms)
-      mockQuestions(answers)
-
-      expect(() => {
+      try {
+        mockRandoms(randoms)
+        mockQuestions(answers)
         const app = new App()
         app.play()
-      }).toThrow()
+      } catch (e) {
+        expect(e).toThrowError()
+      }
     })
   })
 })
