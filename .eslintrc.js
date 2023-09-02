@@ -8,5 +8,5 @@ module.exports = {
     // 함수의 매개변수 개수 제한
     'max-params': ['error', 4],
   },
-  ignorePatterns: ['.eslintrc.js'],
+  ignorePatterns: ['.eslintrc.js', '__tests__/**'],
 };
