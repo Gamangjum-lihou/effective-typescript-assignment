@@ -2,16 +2,12 @@
   "compilerOptions": {
     "target": "ES6",
     "module": "CommonJS",
-    "outDir": "./dist",
-    "rootDir": "./src",
     "strict": true,
-    "moduleResolution": "node",
-    "paths": {
-      "@/*": ["./*"]
-    },
     "noImplicitAny": true,
     "strictNullChecks": true,
     "typeRoots": ["./node_modules/@types", "@types"],
     "types": ["node", "jest"]
-  }
+  },
+  "include": ["src"],
+  "exclude": ["__test__", "docs"]
 }
