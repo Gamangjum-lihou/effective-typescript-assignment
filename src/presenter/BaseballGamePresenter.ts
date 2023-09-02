@@ -22,33 +22,27 @@ class BaseballGamePresenter {
   }
 
   run() {
-    readUserNumber(this.#handleUserInput.bind(this))
-  }
-
-  #handleUserInput(input: string) {
-    try {
+    readUserNumber((input: string) => {
       const userNumbers = input.split('').map(Number)
-      this.#checkInput(userNumbers)
-    } catch (message) {
-      printError(message as string)
-      this.run()
-    }
-  }
 
-  #checkInput(numbers: number[]) {
-    checkValidLength(numbers.length)
-    checkHasNoDuplicates(numbers)
-    this.#countInput(numbers)
-  }
+      if (!this.#validateUserInput(userNumbers)) return
 
-  #countInput(numbers: number[]) {
-    try {
-      const { ball, strike } = this.#baseballGame.count(numbers)
+      const { ball, strike } = this.#baseballGame.count(userNumbers)
       printJudge({ ball, strike })
-      strike === INPUT.number_length ? this.#finish() : this.run()
+
+      if (strike === INPUT.number_length) this.#finish()
+      else this.run()
+    })
+  }
+
+  #validateUserInput(numbers: number[]) {
+    try {
+      checkValidLength(numbers.length)
+      checkHasNoDuplicates(numbers)
+      return true
     } catch (message) {
       printError(message as string)
-      this.run()
+      return false
     }
   }
 
@@ -58,16 +52,20 @@ class BaseballGamePresenter {
   }
 
   #checkRetry() {
-    readGameCommand(this.#handleGameCommandInput.bind(this))
+    readGameCommand((input: string) => {
+      if (!this.#validateGameCommand(input)) return
+
+      input === COMMAND.retry ? this.#retry() : this.#end()
+    })
   }
 
-  #handleGameCommandInput(input: string) {
+  #validateGameCommand(input: string) {
     try {
       checkGameCommand(input)
-      input === COMMAND.retry ? this.#retry() : this.#end()
+      return true
     } catch (message) {
       printError(message as string)
-      this.#checkRetry()
+      return false
     }
   }
 
