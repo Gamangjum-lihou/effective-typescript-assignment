@@ -8,13 +8,13 @@ const View = {
     OutputView.printStart();
   },
 
-  readGameNumbers(callback: any) {
+  readGameNumbers<T extends (arg: string) => unknown>(callback: T) {
     Console.readLine(INPUT_MESSAGE.game_number, userInput => {
       callback(Validator.checkGameNumbers(userInput));
     });
   },
 
-  readGameCommand(callback: any) {
+  readGameCommand<T extends (arg: string) => unknown>(callback: T) {
     Console.readLine(INPUT_MESSAGE.game_command, userInput => {
       callback(Validator.checkGameCommand(userInput));
     });
