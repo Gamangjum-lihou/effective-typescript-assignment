@@ -1,14 +1,21 @@
-import GameCommand from './GameCommand';
+import { checkNumber, checkLength, checkOneOrTwo } from './GameCommand';
 import GameNumber from './GameNumber';
 
-const Validator = {
-  checkGameNumbers(input: string) {
+interface GameValidator<T> {
+  checkGameNumbers(input: T): T;
+  checkGameCommand(input: T): T;
+}
+
+const Validator: GameValidator<string> = {
+  checkGameNumbers(input) {
     new GameNumber(input);
     return input;
   },
 
-  checkGameCommand(input: string) {
-    GameCommand.checkGameCommand(input);
+  checkGameCommand(input) {
+    checkNumber(input);
+    checkLength(input);
+    checkOneOrTwo(input);
     return input;
   },
 };
