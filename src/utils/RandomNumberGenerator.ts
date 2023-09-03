@@ -3,7 +3,7 @@ import { GENERATOR } from '../constants/System';
 
 const RandomNumberGenerator = {
   generateRandomNumber(): number[] {
-    const computer: Set<number> = new Set();
+    const computer = new Set<number>();
     while (computer.size < GENERATOR.pick_count) {
       const number = Random.pickNumberInRange(GENERATOR.start_number, GENERATOR.end_number);
       computer.add(number);
