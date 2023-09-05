@@ -6,10 +6,20 @@
     "@woowacourse/mission-utils": "^1.0.6"
   },
   "devDependencies": {
-    "jest": "^29.6.0"
+    "@jest/globals": "^29.6.4",
+    "@types/jest": "^29.5.4",
+    "jest": "^29.6.0",
+    "prettier": "^3.0.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --detectOpenHandles",
+    "play": "cd src && ts-node App.ts"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "strict": true,
+    "typeRoots": ["./node_modules/@types", "@types"],
+    "types": ["node", "jest"]
+  },
+  "include": ["src"],
+  "exclude": ["__test__", "docs"]
+}
